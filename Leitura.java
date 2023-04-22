@@ -9,7 +9,6 @@ public class Leitura{
             String numero = teclado.nextLine();
             for (char número: numero.toCharArray()) {
                 if(número == '.' || número == ' ' || número == ','){
-                    i = i;
                 }
                 else{
                     i++;

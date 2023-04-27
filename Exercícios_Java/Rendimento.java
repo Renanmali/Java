@@ -13,7 +13,7 @@ public class Rendimento{
         float Capital[] = new float[investimentos+1];
         float Taxa[] = new float[investimentos+1];
         boolean compara = true ;
-        for(int i=0; i<investimentos+1; i++){
+        for(int i=0; i<investimentos; i++){
             nome = teclado.nextLine();
             ordena[i] = nome;
             System.out.println(ordena[i]);
@@ -31,7 +31,7 @@ public class Rendimento{
             System.out.println(Taxa[i]);
         }
         
-        do{
+        while ( compara == true) {
             for(int i=0; i<investimentos; i++){
                 for(int j=0; j<12; j++){
                     juros = (Capital[i]*Taxa[i])/100;
@@ -39,14 +39,8 @@ public class Rendimento{
                 }
                 System.out.printf("%.2f \n", Capital[i]);
             }
-            continua = teclado.nextLine();
-            if(continua == "s"){
-                compara = true;
-            }
-            else if(continua == "n"){
-                compara = false;
-            }
-        }while(compara == true);
+            compara = teclado.nextBoolean();
+        }
         
     }
 }
